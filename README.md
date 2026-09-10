@@ -21,6 +21,19 @@ git clone https://github.com/Pslp/asl-alumnos.git
 cd asl-alumnos/pXX
 ```
 
+**Si ya lo clonaste en una práctica anterior, no vuelvas a clonar: actualizalo.**
+Cada práctica nueva agrega una carpeta, y sin esto no la vas a ver:
+
+```bash
+cd ~/asl-alumnos
+git pull
+```
+
+Si `git pull` se queja de cambios locales, es porque ejecutaste algo que dejó
+rastro adentro de la carpeta. Lo más simple es descartar esos cambios —el material
+es de solo lectura, no perdés nada tuyo— con `git checkout -- .` y volver a
+intentar.
+
 Si preferís bajar un archivo suelto en vez de clonar todo:
 
 ```bash
@@ -43,6 +56,40 @@ lo tocó alguien: volvé a bajarlo y avisá.
 
 > No es burocracia. Comprobar qué te llegó **antes** de correrlo es exactamente la
 > diferencia entre administrar un servidor y tener suerte.
+
+---
+
+## P03 — La falla inyectada
+
+`p03/rotura.sh` — **elige al azar una de tres fallas** y la aplica a tu servidor.
+El healthcheck deja de correr solo, pero el script sigue andando perfecto si lo
+ejecutás vos a mano: ahí está el ejercicio.
+
+**Corrélo recién cuando tengas el punto 4 de la práctica terminado**, con el
+healthcheck instalado y la tarea de cron andando. Si no, no hay nada que romper y
+el script te lo va a decir.
+
+```bash
+cd ~/asl-alumnos
+git pull
+cd p03
+sha256sum -c SHA256SUMS
+sudo bash rotura.sh
+```
+
+A partir de ahí, el método es el de siempre: **¿corrió la tarea?** · si corrió,
+**¿qué dijo?** · si anda a mano y no automatizado, **¿qué es distinto?**
+
+Para dejar todo como estaba:
+
+```bash
+sudo bash rotura.sh restaurar
+```
+
+> **Nadie sabe qué te tocó, ni el docente**: el script sortea. Preguntarle al de al
+> lado no sirve, porque el de al lado tampoco sabe cuál le tocó a él hasta
+> diagnosticarla. **Averiguar cuál es te la pasa la práctica**, y por eso el
+> informe pide nombrarla.
 
 ---
 
