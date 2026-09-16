@@ -59,6 +59,45 @@ lo tocó alguien: volvé a bajarlo y avisá.
 
 ---
 
+## P04 — El servidor está lento
+
+`p04/escenario.sh` — **elige al azar una de tres causas de lentitud** y la aplica
+a tu servidor. A cada uno le toca una distinta, así que el diagnóstico del de al
+lado no te sirve.
+
+**Antes de correrlo, tomá la foto del antes** (punto 1 de la práctica): con la
+máquina todavía sana, anotá tus números con la hora. Esa medición no se puede
+recuperar después, y sin ella no vas a tener con qué comparar.
+
+```bash
+cd ~/asl-alumnos
+git pull
+cd p04
+sha256sum -c SHA256SUMS
+sudo bash escenario.sh
+```
+
+De ahí en adelante el método es medir, no adivinar: **¿qué recurso está
+saturado?** · **¿qué otra herramienta dice lo mismo?** · **¿desde cuándo corre ese
+proceso?**
+
+> **No se acusa por el nombre de un proceso. Se acusa por el número.**
+
+**Antes de irte de la clase**, dejá la máquina como estaba:
+
+```bash
+sudo bash escenario.sh limpiar
+```
+
+No es opcional: si te vas con la carga puesta, la próxima vez que enciendas la VM
+va a arrancar de rodillas y no vas a saber por qué.
+
+> **Nadie sabe qué te tocó, ni el docente**: el script sortea. Como en P03, podés
+> abrir el archivo y leerlo — y como en P03, el que lo hace se queda sin su
+> práctica.
+
+---
+
 ## P03 — La falla inyectada
 
 `p03/rotura.sh` — **elige al azar una de tres fallas** y la aplica a tu servidor.
