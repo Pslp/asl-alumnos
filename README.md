@@ -34,6 +34,16 @@ rastro adentro de la carpeta. Lo más simple es descartar esos cambios —el mat
 es de solo lectura, no perdés nada tuyo— con `git checkout -- .` y volver a
 intentar.
 
+Y si `git pull` dice que **necesita saber cómo reconciliar ramas divergentes**, es
+otro problema: tu copia quedó desalineada de una manera que un `pull` no puede
+resolver. No pierdas tiempo peleándola —acá no hay nada tuyo que salvar—, borrala
+y volvé a clonar:
+
+```bash
+cd ~ && rm -rf asl-alumnos
+git clone https://github.com/Pslp/asl-alumnos.git
+```
+
 Si preferís bajar un archivo suelto en vez de clonar todo:
 
 ```bash
