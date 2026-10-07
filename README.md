@@ -69,6 +69,34 @@ lo tocó alguien: volvé a bajarlo y avisá.
 
 ---
 
+## P05 — La intervención
+
+`p05/intervencion.sh` — **se lleva una parte de tu chequeo automático**, elegida
+al azar, y además **vacía `/backup`**. No a todos les falta lo mismo.
+
+**Corrélo recién cuando tengas el respaldo fuera de `srv1`.** Si el único lugar
+donde guardaste la copia es la propia máquina, la vas a perder.
+
+```bash
+cd ~/asl-alumnos
+git pull
+cd p05
+sha256sum -c SHA256SUMS
+sudo bash intervencion.sh
+```
+
+**Anotá la hora antes de tocar nada**: el tiempo de recuperación se mide desde
+ese momento.
+
+Primero averiguá **qué falta** —comparar lo que hay contra lo que tu respaldo
+dice que había es parte del trabajo—, y recién después restaurá.
+
+Si te quedaste sin respaldo y sin ejercicio, `sudo bash intervencion.sh rescate`
+devuelve el chequeo. El contenido de `/backup` no: ese lo tenías que tener
+afuera.
+
+---
+
 ## P04 — El servidor está lento
 
 `p04/escenario.sh` — **elige al azar una de tres causas de lentitud** y la aplica
