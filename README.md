@@ -53,12 +53,6 @@ curl -fsSLO https://raw.githubusercontent.com/Pslp/asl-alumnos/main/pXX/<archivo
 Las dos herramientas —`git` y `curl`— están en la lista de paquetes de la Guía 0,
 así que ya las tenés.
 
-## Dónde entregás
-
-La carpeta [`entregas/`](entregas/) tiene una carpeta por grupo, con el enlace a
-su bitácora. **Se arma una sola vez**, con un *fork* y un *pull request*: el paso
-a paso está en [`entregas/README.md`](entregas/README.md).
-
 ## Verificá lo que bajaste, siempre
 
 Cada carpeta trae un `SHA256SUMS`. **Antes de usar nada:**
